@@ -121,6 +121,8 @@ def train(company, epochs, batch):
     plt.show()
 
     save_location = input("Name the folder you'd like to create and save the model to: ")
+    if (not save_location.endswith('.h5')):
+        save_location = save_location + ".h5"
     model.save(save_format="h5", filepath=save_location)
 
 
